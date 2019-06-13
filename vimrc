@@ -56,4 +56,5 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
