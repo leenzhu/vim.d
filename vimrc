@@ -42,19 +42,43 @@ imap <c-p> <up>
 
 "Global Var Settings {
 " fatih/vim-go config
+let g:go_version_warning = 0
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"
 " rainbow
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
+" NERDTree
+let NERDTreeIgnore = ['\.o$']
+
+" ACK
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+" Bookmark
+let g:bookmark_save_per_working_dir = 1
+let g:bookmark_auto_save = 1
+let g:bookmark_location_list = 1
+let g:bookmark_disable_ctrlp = 1
 "}
 "
 " Misc Settings {
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "}
 
+let g:rainbow_active = 1
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
+Plug 'fatih/vim-go'
 Plug 'easymotion/vim-easymotion'
+Plug 'inkarkat/vim-mark'
+Plug 'inkarkat/vim-ingo-library'
+Plug 'mileszs/ack.vim'
+Plug 'vim-scripts/cscope.vim'
+Plug 'MattesGroeger/vim-bookmarks'
+Plug 'luochen1990/rainbow'
 call plug#end()
