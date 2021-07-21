@@ -19,6 +19,7 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 colorscheme elflord
+"colorscheme default
 "}
 
 "Leader key Settings {
@@ -27,7 +28,7 @@ nmap <leader>l :ls<cr>:b<SPACE>
 nmap <SPACE> <C-F>
 nmap <Tab> <C-B>
 nmap <leader>e :NERDTreeToggle<cr>
-
+nmap <leader><leader>m :make<cr>
 imap <c-b> <left>
 imap <c-f> <right>
 imap <c-a> <home>
@@ -43,8 +44,8 @@ imap <c-p> <up>
 "Global Var Settings {
 " fatih/vim-go config
 let g:go_version_warning = 0
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
+"let g:go_fmt_autosave = 1
+"let g:go_fmt_command = "goimports"
 " rainbow
 let g:rainbow_active = 1 "0 if you want to enable it later via :RainbowToggle
 " NERDTree
@@ -69,6 +70,12 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 let g:rainbow_active = 1
 
+let g:easy_align_delimiters = {
+  \ '\': {
+  \     'pattern': '\\$',
+  \ },
+  \ }
+
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
@@ -81,4 +88,5 @@ Plug 'mileszs/ack.vim'
 Plug 'vim-scripts/cscope.vim'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'luochen1990/rainbow'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
